@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  background-color: #141414;
+  color: #e6e6e6;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  font-size: 3.5em;
+  margin-bottom: 30px;
+}
+
+.profiles {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.AddPerfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.AddPerfil .img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.AddPerfil .img-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.AddPerfil .img-wrapper img {
+  mix-blend-mode: lighten; /* remove fundos escuros */
+}
+
+.AddPerfil .img-wrapper img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain; /* SVG não distorce */
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+figcaption {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: Helvetica, sans-serif;
+  font-size: 1.5em;
+  margin-top: 0.2em;
+  transition: box-shadow 0.2s ease;
+}
+
+.img-wrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+  overflow: hidden;
+  position: relative; /* necessário para o ::after funcionar */
+  transition: box-shadow 0.2s ease;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* ocupa todo o espaço do wrapper */
+  border-radius: 5%;
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0);
+  transition: box-shadow 0.2s ease;
+}
+
+.img-wrapper:hover::after {
+  box-shadow: inset 0 0 0 4px rgb(212, 212, 212);
+}
+
+.profile:hover figcaption {
+  color: rgb(192, 192, 192);
+}
+
+.AddPerfil:hover figcaption {
+  color: rgb(192, 192, 192);
+}
